@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Лабораторная работа №4</title>
+		<style>
+			h1 {
+				color:red;
+				text-align:center;
+			}
+			body {
+				background-color:PaleGreen; 
+				font-weight:bold;}
+			input {
+				font-weight:bold;
+			}
+		</style>
+		<script>
+		function anketa(){
+			win = window.open("","", "width=1000, height=500");
+			win.document.open();
+			str = "<h1>О себе</h1><hr>Я, "+document.getElementById("Фамилия").value;
+			str += " "+document.getElementById("Имя").value;
+			str += " "+document.getElementById("Отчество").value;
+			str += " родился в "+document.getElementById("Год").value;
+			str += " году в городе "+document.getElementById("Место").value;
+			lub = document.getElementById("Занятие").value;
+			str += "<br><br>Больше всего я люблю "+lub;
+			nelub = document.getElementById("НеЛюбЗанятие").value;
+			str += " и очень не люблю "+nelub+". Было бы замечательно, всю жизнь "+lub;
+			str += ", но к сожалению мне приходится иногда и "+nelub;
+			str += "<br><input type='button' value='Закрыть' onclick='window.close()'>";
+			win.document.write(str);
+			win.document.close();
+		}
+		</script>
+	</head>
+	<body>
+		<h1>Анкета</h1>
+		<hr>
+		<form>
+			Фамилия:<input type=text id='Фамилия' size="20">
+			<br>
+			Имя:<input type=text id='Имя' size="20">
+			<br>
+			Отчество:<input type=text id='Отчество' size="20">
+			<br>
+			Год рождения:<input type=text id='Год' size="20">
+			<br>
+			Место рождения:<input type=text id='Место' size="20">
+			<br>
+			Любимое занятие:<input type=text id='Занятие' size="20">
+			<br>
+			Не любимое занятие:<input type=text id='НеЛюбЗанятие' size="20">
+			<br>
+			<input type=button value="Сформировать биографию" OnClick="anketa()">
+		<hr>
+		</form>
+	</body>
+</html>
