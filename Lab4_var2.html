@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Лабораторная работа №4</title>
+		<style>
+			h1 {
+				color:red;
+				text-align:center;
+			}
+			body {
+				background-color:PaleGreen; 
+				font-weight:bold;}
+			input {
+				font-weight:bold;
+			}
+		</style>
+		<script>
+		function skazka(){
+			hero = document.getElementById("Имя").value;		
+			occupation = document.getElementById("Занятие").value;
+			friend = document.getElementById("Друг").value;
+			gift = document.getElementById("Подарок").value;
+			win = window.open("","", "width=1000, height=500");
+			win.document.open();
+			str = "<h1>"+hero+" и "+gift+"</h1><hr>";
+			str +="В одном лесу жила маленькая "+hero+", которая очень любила "+occupation+". У нее так хорошо получалось, что весь лес собирался послушать ее! От  сороки она узнала, что у людей принято дарить "+gift+" любимым исполнителям. А "+gift+" она любила также сильно, как и "+occupation+". Долго грустила "+hero+". Но однажды, после очередного импровизированного концерта, "+friend+" подлетел и подарил ей... "+gift+"! Уж он то был истинным джентельменом! "+hero+" была невероятно счатлива!!!";
+            str += "<br><input type='button' value='Закрыть' onclick='window.close()'>";
+			win.document.write(str);
+			win.document.close();
+		}
+		</script>
+	</head>
+	<body>
+		<h1>Генератор сказок</h1>
+		<hr>
+		<form>
+			Имя героя:<input type=text id='Имя' size="20">
+			<br>
+			Любимое занятие:<input type=text id='Занятие' size="20">
+			<br>
+			Друг героя:<input type=text id='Друг' size="20">
+			<br>
+			Любимый подарок:<input type=text id='Подарок' size="20">
+			<br>
+			<input type=button value="Сгенерировать сказку" OnClick="skazka()">
+		<hr>
+		</form>
+	</body>
+</html>
